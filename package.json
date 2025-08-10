@@ -1,0 +1,9 @@
+{
+  "name": "mcp-codespaces-starter",
+  "private": true,
+  "version": "0.0.1",
+  "description": "MCP starter for GitHub Codespaces (Python server + optional Inspector)",
+  "scripts": {
+    "inspector": "npx @modelcontextprotocol/inspector mcp run server.py"
+  }
+}
