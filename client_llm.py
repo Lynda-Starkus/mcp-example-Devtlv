@@ -11,6 +11,10 @@ from typing import List, Dict, Any
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 def convert_to_llm_tool(tool) -> Dict[str, Any]:
     """Convert MCP tool metadata to a function-calling schema for LLMs."""
     return {
@@ -37,7 +41,7 @@ def try_call_llm(prompt: str, functions: List[Dict[str, Any]]):
         print("[CLIENT] Azure AI Inference not installed; using rule-based fallback.")
         return rule_based_tool_selector(prompt, functions)
 
-    token = os.environ.get("GITHUB_TOKEN")
+    token = os.getenv('GITHUB_TOKEN')
     if not token:
         print("[CLIENT] GITHUB_TOKEN not set; using rule-based fallback.")
         return rule_based_tool_selector(prompt, functions)

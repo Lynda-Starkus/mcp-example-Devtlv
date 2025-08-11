@@ -42,8 +42,8 @@ async def run():
                     print("[CLIENT] Resource part:", c)
 
             # --- Call a tool (extract text content) ---
-            print("[CLIENT] call tool add(a=1,b=7)")
-            tr = await session.call_tool("add", arguments={"a": 1, "b": 7})
+            print("[CLIENT] call tool add(a=9,b=8)")
+            tr = await session.call_tool("add", arguments={"a": 9, "b": 8})
             # tr.content is a list of parts (e.g., text chunks)
             for part in tr.content:
                 txt = getattr(part, "text", None)

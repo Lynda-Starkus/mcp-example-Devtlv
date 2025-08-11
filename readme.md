@@ -19,6 +19,7 @@ This repo runs a **Model Context Protocol** server and client inside **GitHub Co
 ```bash
 python -m venv .venv
 source .venv/bin/activate
+%%(or if you are in windows cmd)  venv/Scripts/activate  
 pip install -r requirements.txt
 ```
 
